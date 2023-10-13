@@ -1,9 +1,9 @@
-name: Growth
+name: Auto sign juejin
 
 on:
   schedule:
     # UTC 时间 0 点运行一次
-    - cron: '0 0 * * *'
+    - cron: '15 8 * * *'
   workflow_dispatch:
 
 jobs:
@@ -19,11 +19,11 @@ jobs:
       - name: Depend install and serve
         env:
           COOKIE: ${{ secrets.COOKIE }}
-          EMAIL: ${{ secrets.EMAIL }}
-          AUTHORIZATION_CODE: ${{ secrets.AUTHORIZATION_CODE }}
+          # EMAIL: ${{ secrets.EMAIL }}
+          # AUTHORIZATION_CODE: ${{ secrets.AUTHORIZATION_CODE }}
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-          DINGDING_WEBHOOK: ${{ secrets.DINGDING_WEBHOOK }}
-          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          # DINGDING_WEBHOOK: ${{ secrets.DINGDING_WEBHOOK }}
+          # FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
         run: |
           npm install
           npm run serve
