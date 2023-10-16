@@ -2,6 +2,8 @@ const Juejin = require('./juejin/index.js')
 const pushMessage = require('./utils/pushMessage.js')
 const { wait, getRandomArbitrary } = require('./utils/utils.js')
 const { COOKIE } = require('./ENV.js')
+const pushplus = require('./pushplus.js')
+const { EMAIL, AUTHORIZATION_CODE, PUSHPLUS_TOKEN, DINGDING_WEBHOOK, FEISHU_WEBHOOK } = require('./ENV.js')
 
 const growth = {
   userName: '', // 用户名
@@ -43,6 +45,14 @@ const main = async () => {
 
     growth.userName = juejin.user.user_name
   } catch {
+    PUSHPLUS_TOKEN &&
+    pushplus(
+      formatter(type, message, {
+        style: 'markdown',
+        bold: true,
+        wordWrap: true,
+      })
+    )
     throw new Error('登录失败, 请尝试更新 Cookies')
   }
 
