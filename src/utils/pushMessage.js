@@ -69,7 +69,7 @@ const formatter = (type = 'info', message = '', options = {}) => {
   }
 
   return {
-    title: `签到${type === 'info' ? '成功 🎉' : '失败 💣'}`,
+    title: `🦉自动签到 ${type === 'info' ? '成功 🎉' : '失败 💣'}`,
     content: style === 'html' ? `<pre>${message}</pre>` : message,
   }
 }
