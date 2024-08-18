@@ -21,7 +21,7 @@ const growth = {
 
 const message = () => {
   return `
-Hello ${growth.userName}
+📎 Hello ${growth.userName}
 ${growth.checkedIn ? `签到 +${growth.incrPoint} 矿石` : '今日已签到'}
 当前矿石数 ${growth.sumPoint}
 连续签到天数 ${growth.contCount}
